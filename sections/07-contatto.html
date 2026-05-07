@@ -1,417 +1,185 @@
 <!-- =================== CONTATTO =================== -->
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"112px","bottom":"112px","left":"24px","right":"24px"}},"color":{"background":"#f7f5f2"}},"layout":{"type":"constrained","contentSize":"960px"},"anchor":"contatto"} -->
-<div id="contatto" class="wp-block-group has-background is-layout-constrained wp-block-group-is-layout-constrained" style="background-color:#f7f5f2;padding-top:112px;padding-bottom:112px;padding-left:24px;padding-right:24px">
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"112px","bottom":"112px","left":"24px","right":"24px"}},"color":{"background":"#f7f5f2"}},"layout":{"type":"default"},"anchor":"contatto"} -->
+<div id="contatto" class="wp-block-group has-background" style="background-color:#f7f5f2;padding-top:112px;padding-bottom:112px;padding-left:24px;padding-right:24px">
 
-	<!-- ===================== INTRO ===================== -->
+<!-- wp:html -->
+<style>
+	.sd-contact{max-width:1080px;margin:0 auto;color:#0a0a0a;font-family:inherit}
+	.sd-contact *{box-sizing:border-box}
+	.sd-contact a{transition:opacity .2s}
+	.sd-contact a:hover{opacity:.85}
 
-	<!-- Eyebrow -->
-	<!-- wp:paragraph {"className":"siavs-reveal","style":{"typography":{"fontSize":"12px","letterSpacing":"3px","textTransform":"uppercase","fontWeight":"600"},"color":{"text":"#FF4900"}}} -->
-	<p class="siavs-reveal has-text-color" style="color:#FF4900;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase">— 06 · Parliamone</p>
-	<!-- /wp:paragraph -->
+	/* Header */
+	.sd-eyebrow{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#FF4900;margin:0}
+	.sd-headline{font-size:clamp(36px,5.5vw,56px);font-weight:400;line-height:1.05;letter-spacing:-0.02em;color:#0a0a0a;margin:32px 0}
+	.sd-headline em{font-style:italic;color:#FF4900}
+	.sd-lead{padding-left:20px;border-left:2px solid #FF4900;margin-bottom:80px}
+	.sd-lead p{font-size:18px;line-height:1.65;color:#444;margin:0}
+	.sd-lead strong{color:#0a0a0a;font-weight:600}
 
-	<!-- wp:spacer {"height":"32px"} -->
-	<div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
+	/* Grid 3 cards */
+	.sd-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:96px}
+	@media (max-width:900px){.sd-cards{grid-template-columns:1fr}}
 
-	<!-- Headline -->
-	<!-- wp:heading {"className":"siavs-reveal","style":{"typography":{"fontSize":"clamp(36px, 5.5vw, 56px)","fontWeight":"400","lineHeight":"1.05","letterSpacing":"-0.02em"},"color":{"text":"#0a0a0a"}}} -->
-	<h2 class="wp-block-heading siavs-reveal has-text-color" style="color:#0a0a0a;font-size:clamp(36px, 5.5vw, 56px);font-style:normal;font-weight:400;letter-spacing:-0.02em;line-height:1.05">Da dove vuoi<br>iniziare il discorso?<br><em style="color:#FF4900">Scegli il tuo punto d'ingresso.</em></h2>
-	<!-- /wp:heading -->
+	.sd-card{display:flex;flex-direction:column;background:#fff;border:1px solid #ececea;border-top:3px solid #FF4900;border-radius:4px;padding:36px 32px}
+	.sd-card--primary{background:#0a0a0a;border:none;border-top:3px solid #FF4900}
 
-	<!-- wp:spacer {"height":"32px"} -->
-	<div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
+	.sd-pill{align-self:flex-start;display:inline-block;padding:5px 10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;margin-bottom:24px;background:#FF4900;color:#0a0a0a}
+	.sd-pill--outline{background:transparent;color:#FF4900;border:1px solid #FF4900;padding:4px 10px}
 
-	<!-- Lead with left rule -->
-	<!-- wp:group {"className":"siavs-reveal","style":{"border":{"left":{"color":"#FF4900","width":"2px","style":"solid"}},"spacing":{"padding":{"left":"20px"}}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group siavs-reveal is-layout-constrained wp-block-group-is-layout-constrained" style="border-left-color:#FF4900;border-left-style:solid;border-left-width:2px;padding-left:20px">
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"18px","lineHeight":"1.65","fontWeight":"400"},"color":{"text":"#444444"}}} -->
-		<p class="has-text-color" style="color:#444444;font-size:18px;font-weight:400;line-height:1.65">Skill Donor lavora su due fronti: l'<strong style="color:#0a0a0a">ETS</strong>, che mette in connessione donor di competenze ed enti del Terzo Settore, e la <strong style="color:#0a0a0a">S.r.l.</strong>, che progetta i programmi di corporate volunteering. Identifica chi sei, e parlerai con la persona giusta dal primo messaggio.</p>
-		<!-- /wp:paragraph -->
+	.sd-card h3{font-size:24px;font-weight:400;line-height:1.2;letter-spacing:-0.01em;margin:0 0 16px;color:#0a0a0a}
+	.sd-card h3 em{font-style:italic;color:#FF4900}
+	.sd-card--primary h3{color:#fff}
+
+	.sd-card p.sd-desc{font-size:14.5px;line-height:1.6;color:#555;margin:0 0 20px}
+	.sd-card--primary p.sd-desc{color:#bfbfbf}
+
+	.sd-list{list-style:none;padding:0;margin:0 0 28px}
+	.sd-list li{font-size:14px;line-height:1.6;color:#444;padding-left:14px;position:relative;margin-bottom:6px}
+	.sd-list li::before{content:"·";color:#FF4900;font-weight:700;position:absolute;left:0;top:-2px;font-size:18px}
+	.sd-card--primary .sd-list li{color:#cccccc}
+
+	.sd-btn{display:inline-block;background:#FF4900;color:#fff;padding:13px 22px;font-size:14px;font-weight:600;letter-spacing:.3px;text-decoration:none;border-radius:2px;border:1px solid #FF4900;margin-top:auto;margin-bottom:14px;text-align:center}
+	.sd-btn--outline{background:transparent;color:#0a0a0a;border-color:#0a0a0a}
+	.sd-card--primary .sd-btn{background:#FF4900;border-color:#FF4900;color:#fff}
+
+	.sd-mailto{font-size:13px;color:#777;margin:0}
+	.sd-mailto a{color:#0a0a0a;text-decoration:none;border-bottom:1px solid #d4d0c8}
+	.sd-card--primary .sd-mailto{color:#888}
+	.sd-card--primary .sd-mailto a{color:#fff;border-bottom-color:#404040}
+
+	/* Two-column info section */
+	.sd-info{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:96px}
+	@media (max-width:900px){.sd-info{grid-template-columns:1fr;gap:48px}}
+
+	.sd-info-block{border-top:2px solid #0a0a0a;padding-top:24px}
+	.sd-info-block h4{font-size:26px;font-weight:400;line-height:1.2;letter-spacing:-0.01em;color:#0a0a0a;margin:8px 0 24px}
+
+	.sd-step{display:flex;gap:14px;margin-bottom:18px}
+	.sd-step-num{flex:0 0 auto;color:#FF4900;font-weight:700;font-size:13px;letter-spacing:2px;padding-top:3px}
+	.sd-step-text{font-size:15px;line-height:1.6;color:#444;margin:0}
+	.sd-step-text strong{color:#0a0a0a;font-weight:600}
+
+	/* Final dark CTA */
+	.sd-cta{background:#0a0a0a;color:#fff;border-radius:4px;padding:56px 40px}
+	.sd-cta .sd-eyebrow{color:#FF4900;margin-bottom:16px}
+	.sd-cta h3{font-size:clamp(28px,4vw,40px);font-weight:400;line-height:1.15;letter-spacing:-0.01em;color:#fff;margin:0 0 32px}
+	.sd-cta h3 em{font-style:italic;color:#FF4900}
+
+	.sd-cta-buttons{display:flex;flex-wrap:wrap;gap:12px}
+	.sd-cta-buttons .sd-btn{margin:0}
+	.sd-cta-buttons .sd-btn--outline{background:transparent;color:#fff;border-color:#404040}
+
+	.sd-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:40px;padding-top:24px;border-top:1px solid #1f1f1f}
+	.sd-meta p{font-size:12px;letter-spacing:1px;color:#808080;margin:0}
+</style>
+
+<div class="sd-contact">
+
+	<!-- Header -->
+	<p class="sd-eyebrow">— 06 · Parliamone</p>
+	<h2 class="sd-headline">Da dove vuoi<br>iniziare il discorso?<br><em>Scegli il tuo punto d'ingresso.</em></h2>
+	<div class="sd-lead">
+		<p>Skill Donor mette in dialogo tre realtà: gli <strong>enti del Terzo Settore</strong> che hanno bisogno di competenze, i <strong>donor individuali</strong> che vogliono mettere a disposizione le proprie, e le <strong>aziende</strong> che vogliono trasformare le competenze dei team in impatto sociale misurabile. Identifica chi sei, e parlerai con la persona giusta dal primo messaggio.</p>
 	</div>
-	<!-- /wp:group -->
 
-	<!-- wp:spacer {"height":"80px"} -->
-	<div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
+	<!-- 3 audience cards -->
+	<div class="sd-cards">
 
-	<!-- ===================== DUE CARD AUDIENCE PRIMARIE ===================== -->
-
-	<!-- wp:columns {"className":"siavs-reveal","style":{"spacing":{"blockGap":{"left":"24px","top":"24px"}}}} -->
-	<div class="wp-block-columns siavs-reveal is-layout-flex wp-block-columns-is-layout-flex">
-
-		<!-- ===== CARD 01 — ETS / DONOR (primaria) ===== -->
-		<!-- wp:column -->
-		<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-			<!-- wp:group {"style":{"color":{"background":"#0a0a0a"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"36px","right":"36px"}},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group has-background is-layout-constrained wp-block-group-is-layout-constrained" style="border-radius:4px;background-color:#0a0a0a;padding-top:40px;padding-right:36px;padding-bottom:40px;padding-left:36px">
-
-				<!-- Pill ETS -->
-				<!-- wp:html -->
-				<p style="display:inline-block;margin:0;border-radius:2px;color:#0a0a0a;background-color:#FF4900;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase">Skill Donor ETS</p>
-				<!-- /wp:html -->
-
-				<!-- wp:spacer {"height":"24px"} -->
-				<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"28px","fontWeight":"400","lineHeight":"1.15","letterSpacing":"-0.01em"},"color":{"text":"#ffffff"}}} -->
-				<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:28px;font-style:normal;font-weight:400;letter-spacing:-0.01em;line-height:1.15">Sei un <em style="color:#FF4900">ente del Terzo Settore</em><br>o un donor di competenze?</h3>
-				<!-- /wp:heading -->
-
-				<!-- wp:spacer {"height":"20px"} -->
-				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"15px","lineHeight":"1.65"},"color":{"text":"#bfbfbf"}}} -->
-				<p class="has-text-color" style="color:#bfbfbf;font-size:15px;line-height:1.65">L'ETS è il cuore del progetto: gestisce la community dei donor, le partnership con gli enti del Terzo Settore, il matching delle competenze. Da qui passa ogni rapporto con donor individuali e organizzazioni non profit.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:spacer {"height":"24px"} -->
-				<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- Bullet list -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","lineHeight":"1.7"},"color":{"text":"#cccccc"}}} -->
-				<p class="has-text-color" style="color:#cccccc;font-size:14px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;Vuoi donare competenze a un progetto sociale</p>
-				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","lineHeight":"1.7"},"color":{"text":"#cccccc"}}} -->
-				<p class="has-text-color" style="color:#cccccc;font-size:14px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;Sei un ETS che cerca skill specialistiche</p>
-				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","lineHeight":"1.7"},"color":{"text":"#cccccc"}}} -->
-				<p class="has-text-color" style="color:#cccccc;font-size:14px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;Vuoi attivare partnership o LOI</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:spacer {"height":"32px"} -->
-				<div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- CTA buttons -->
-				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
-				<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-block-buttons-is-layout-flex">
-					<!-- wp:button {"style":{"color":{"background":"#FF4900","text":"#ffffff"},"typography":{"fontSize":"14px","fontWeight":"600","letterSpacing":"0.3px"},"border":{"radius":"2px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"24px","right":"24px"}}}} -->
-					<div class="wp-block-button" style="font-size:14px;font-weight:600;letter-spacing:0.3px"><a class="wp-block-button__link has-text-color has-background wp-element-button" style="border-radius:2px;color:#ffffff;background-color:#FF4900;padding-top:14px;padding-right:24px;padding-bottom:14px;padding-left:24px" href="https://skilldonor.org/ente-benefico-dati/">Scopri Skill Donor ETS →</a></div>
-					<!-- /wp:button -->
-				</div>
-				<!-- /wp:buttons -->
-
-				<!-- wp:spacer {"height":"16px"} -->
-				<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- Email diretta -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"13px"},"color":{"text":"#888888"}}} -->
-				<p class="has-text-color" style="color:#888888;font-size:13px">Oppure scrivi a <a href="mailto:ets@skilldonor.it" style="color:#ffffff;text-decoration:none;border-bottom:1px solid #404040">ets@skilldonor.it</a></p>
-				<!-- /wp:paragraph -->
-
-			</div>
-			<!-- /wp:group -->
+		<!-- ETS card (primary) -->
+		<div class="sd-card sd-card--primary">
+			<span class="sd-pill">Per gli enti</span>
+			<h3>Sei un <em>ente</em><br>del Terzo Settore?</h3>
+			<p class="sd-desc">Hai un progetto sociale che ha bisogno di competenze specialistiche e cerchi più di una consulenza generica. Da qui passa la nostra community di donor e le partnership con gli ETS.</p>
+			<ul class="sd-list">
+				<li>Skill specialistiche su misura</li>
+				<li>Donor certificati e tracciati</li>
+				<li>Partnership e LOI strutturate</li>
+			</ul>
+			<a class="sd-btn" href="https://skilldonor.org/ente-benefico-dati/">Pagina Enti del Terzo Settore →</a>
+			<p class="sd-mailto">Oppure <a href="mailto:info@skilldonor.org?subject=Richiesta%20da%20ETS">info@skilldonor.org</a></p>
 		</div>
-		<!-- /wp:column -->
 
-		<!-- ===== CARD 02 — CORPORATE ===== -->
-		<!-- wp:column -->
-		<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-			<!-- wp:group {"style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"36px","right":"36px"}},"border":{"top":{"color":"#FF4900","width":"3px","style":"solid"},"right":{"color":"#ececea","width":"1px","style":"solid"},"bottom":{"color":"#ececea","width":"1px","style":"solid"},"left":{"color":"#ececea","width":"1px","style":"solid"},"radius":"4px"}},"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group has-background is-layout-constrained wp-block-group-is-layout-constrained" style="border-top-color:#FF4900;border-top-style:solid;border-top-width:3px;border-right-color:#ececea;border-right-style:solid;border-right-width:1px;border-bottom-color:#ececea;border-bottom-style:solid;border-bottom-width:1px;border-left-color:#ececea;border-left-style:solid;border-left-width:1px;border-radius:4px;background-color:#ffffff;padding-top:40px;padding-right:36px;padding-bottom:40px;padding-left:36px">
-
-				<!-- Pill Corporate -->
-				<!-- wp:html -->
-				<p style="display:inline-block;margin:0;border:1px solid #FF4900;border-radius:2px;color:#FF4900;background-color:transparent;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase">Corporate volunteering</p>
-				<!-- /wp:html -->
-
-				<!-- wp:spacer {"height":"24px"} -->
-				<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"28px","fontWeight":"400","lineHeight":"1.15","letterSpacing":"-0.01em"},"color":{"text":"#0a0a0a"}}} -->
-				<h3 class="wp-block-heading has-text-color" style="color:#0a0a0a;font-size:28px;font-style:normal;font-weight:400;letter-spacing:-0.01em;line-height:1.15">Sei un'<em style="color:#FF4900">azienda</em><br>che vuole creare impatto?</h3>
-				<!-- /wp:heading -->
-
-				<!-- wp:spacer {"height":"20px"} -->
-				<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"15px","lineHeight":"1.65"},"color":{"text":"#555555"}}} -->
-				<p class="has-text-color" style="color:#555555;font-size:15px;line-height:1.65">Progettiamo programmi di corporate volunteering misurabili: skill-based, calibrati sulla tua organizzazione, integrati con la tua rendicontazione di sostenibilità. Niente attività isolate, niente metriche di facciata.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:spacer {"height":"24px"} -->
-				<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- Bullet list -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","lineHeight":"1.7"},"color":{"text":"#444444"}}} -->
-				<p class="has-text-color" style="color:#444444;font-size:14px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;Programmi di volontariato di competenza per i tuoi team</p>
-				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","lineHeight":"1.7"},"color":{"text":"#444444"}}} -->
-				<p class="has-text-color" style="color:#444444;font-size:14px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;Partnership con ETS allineate alla tua mission</p>
-				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","lineHeight":"1.7"},"color":{"text":"#444444"}}} -->
-				<p class="has-text-color" style="color:#444444;font-size:14px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;Reportistica di impatto integrata in CSRD/DNF</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:spacer {"height":"32px"} -->
-				<div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- CTA buttons -->
-				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
-				<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-block-buttons-is-layout-flex">
-					<!-- wp:button {"className":"is-style-outline","style":{"color":{"text":"#0a0a0a"},"border":{"color":"#0a0a0a","radius":"2px","width":"1px","style":"solid"},"typography":{"fontSize":"14px","fontWeight":"600","letterSpacing":"0.3px"},"spacing":{"padding":{"top":"14px","bottom":"14px","left":"24px","right":"24px"}}}} -->
-					<div class="wp-block-button is-style-outline" style="font-size:14px;font-weight:600;letter-spacing:0.3px"><a class="wp-block-button__link has-border-color has-text-color wp-element-button" style="border-color:#0a0a0a;border-style:solid;border-width:1px;border-radius:2px;color:#0a0a0a;padding-top:14px;padding-right:24px;padding-bottom:14px;padding-left:24px" href="https://skilldonor.org/corporate-dati/">Scopri il programma corporate →</a></div>
-					<!-- /wp:button -->
-				</div>
-				<!-- /wp:buttons -->
-
-				<!-- wp:spacer {"height":"16px"} -->
-				<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- Email diretta -->
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"13px"},"color":{"text":"#777777"}}} -->
-				<p class="has-text-color" style="color:#777777;font-size:13px">Oppure scrivi a <a href="mailto:corporate@skilldonor.it" style="color:#0a0a0a;text-decoration:none;border-bottom:1px solid #d4d0c8">corporate@skilldonor.it</a></p>
-				<!-- /wp:paragraph -->
-
-			</div>
-			<!-- /wp:group -->
+		<!-- Donor card -->
+		<div class="sd-card">
+			<span class="sd-pill sd-pill--outline">Per i donor</span>
+			<h3>Sei un <em>donor</em><br>di competenze?</h3>
+			<p class="sd-desc">Hai esperienza nel tuo campo e vuoi metterla a disposizione di un progetto sociale, in modo strutturato e tracciabile. Non volontariato generico: skill-based, misurato, riconosciuto.</p>
+			<ul class="sd-list">
+				<li>Matching con bisogni reali degli ETS</li>
+				<li>Ore tracciate, output rendicontati</li>
+				<li>Community senior di 105+ donor</li>
+			</ul>
+			<a class="sd-btn sd-btn--outline" href="https://skilldonor.org/skill-donor-dati/">Pagina Donor →</a>
+			<p class="sd-mailto">Oppure <a href="mailto:info@skilldonor.org?subject=Richiesta%20da%20donor">info@skilldonor.org</a></p>
 		</div>
-		<!-- /wp:column -->
+
+		<!-- Corporate card -->
+		<div class="sd-card">
+			<span class="sd-pill sd-pill--outline">Per le aziende</span>
+			<h3>Sei un'<em>azienda</em><br>che vuole creare impatto?</h3>
+			<p class="sd-desc">Vuoi trasformare le competenze dei tuoi team in un programma di corporate volunteering misurabile, allineato alla rendicontazione di sostenibilità. Niente attività isolate, niente metriche di facciata.</p>
+			<ul class="sd-list">
+				<li>Programmi skill-based su misura</li>
+				<li>Reportistica integrata in CSRD/DNF</li>
+				<li>Partnership con ETS allineati</li>
+			</ul>
+			<a class="sd-btn sd-btn--outline" href="https://skilldonor.org/corporate-dati/">Pagina Corporate →</a>
+			<p class="sd-mailto">Oppure <a href="mailto:info@skilldonor.org?subject=Richiesta%20da%20azienda">info@skilldonor.org</a></p>
+		</div>
 
 	</div>
-	<!-- /wp:columns -->
 
-	<!-- wp:spacer {"height":"32px"} -->
-	<div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
+	<!-- Cosa raccontarci / Cosa succede dopo -->
+	<div class="sd-info">
 
-	<!-- ===================== TERZA OPZIONE — CONSULENZA (light) ===================== -->
-
-	<!-- wp:group {"className":"siavs-reveal","style":{"color":{"background":"#ffffff"},"spacing":{"padding":{"top":"28px","bottom":"28px","left":"32px","right":"32px"}},"border":{"color":"#e8e4dc","width":"1px","style":"solid","radius":"4px"}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group siavs-reveal has-border-color has-background is-layout-constrained wp-block-group-is-layout-constrained" style="border-color:#e8e4dc;border-style:solid;border-width:1px;border-radius:4px;background-color:#ffffff;padding-top:28px;padding-right:32px;padding-bottom:28px;padding-left:32px">
-
-		<!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"32px"}}}} -->
-		<div class="wp-block-columns are-vertically-aligned-center is-layout-flex wp-block-columns-is-layout-flex">
-
-			<!-- wp:column {"verticalAlignment":"center"} -->
-			<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"11px","letterSpacing":"2px","textTransform":"uppercase","fontWeight":"700"},"color":{"text":"#888888"}}} -->
-				<p class="has-text-color" style="color:#888888;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase">Skill Donor S.r.l. · Consulenza</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:spacer {"height":"6px"} -->
-				<div style="height:6px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"16px","lineHeight":"1.55"},"color":{"text":"#0a0a0a"}}} -->
-				<p class="has-text-color" style="color:#0a0a0a;font-size:16px;line-height:1.55">Cerchi <strong>advisory specialistica in compliance, governance o impatto</strong>? La S.r.l. (SIAVS) offre consulenza dedicata oltre i programmi corporate.</p>
-				<!-- /wp:paragraph -->
-
-			</div>
-			<!-- /wp:column -->
-
-			<!-- wp:column {"verticalAlignment":"center","width":"30%"} -->
-			<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:30%">
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontWeight":"600"}}} -->
-				<p style="font-size:14px;font-weight:600"><a href="https://skilldonor.org/skill-donor-dati/" style="color:#FF4900;text-decoration:none;border-bottom:1px solid #FF4900;white-space:nowrap">Vedi i servizi →</a></p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:column -->
-
+		<div class="sd-info-block">
+			<p class="sd-eyebrow">Cosa raccontarci</p>
+			<h4>Quattro cose ci aiutano<br>a risponderti meglio.</h4>
+			<ul class="sd-list">
+				<li><strong>Chi sei.</strong> Ente, azienda, donor individuale.</li>
+				<li><strong>Il contesto.</strong> Cosa sta succedendo, perché ne parli ora.</li>
+				<li><strong>Cosa cerchi.</strong> Donor, partnership, programma corporate.</li>
+				<li><strong>I tempi.</strong> Quando vorresti partire, scadenze rilevanti.</li>
+			</ul>
 		</div>
-		<!-- /wp:columns -->
+
+		<div class="sd-info-block">
+			<p class="sd-eyebrow">Cosa succede dopo</p>
+			<h4>Tre passaggi,<br>nessuna sorpresa.</h4>
+			<div class="sd-step">
+				<span class="sd-step-num">01</span>
+				<p class="sd-step-text"><strong>Leggiamo.</strong> Entro 48h ti rispondiamo a mano, non con un autoresponder.</p>
+			</div>
+			<div class="sd-step">
+				<span class="sd-step-num">02</span>
+				<p class="sd-step-text"><strong>Ci confrontiamo.</strong> Una call di 30 minuti per capire se la richiesta è nelle nostre corde.</p>
+			</div>
+			<div class="sd-step">
+				<span class="sd-step-num">03</span>
+				<p class="sd-step-text"><strong>Proponiamo.</strong> Solo se ha senso. Una proposta scritta, leggibile, senza gergo.</p>
+			</div>
+		</div>
 
 	</div>
-	<!-- /wp:group -->
 
-	<!-- wp:spacer {"height":"96px"} -->
-	<div style="height:96px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-
-	<!-- ===================== COSA RACCONTARCI / COSA SUCCEDE DOPO ===================== -->
-
-	<!-- wp:columns {"className":"siavs-reveal","style":{"spacing":{"blockGap":{"left":"56px","top":"40px"}}}} -->
-	<div class="wp-block-columns siavs-reveal is-layout-flex wp-block-columns-is-layout-flex">
-
-		<!-- ===== COSA RACCONTARCI ===== -->
-		<!-- wp:column -->
-		<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-
-			<!-- wp:group {"style":{"border":{"top":{"color":"#0a0a0a","width":"2px","style":"solid"}},"spacing":{"padding":{"top":"24px"}}},"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained" style="border-top-color:#0a0a0a;border-top-style:solid;border-top-width:2px;padding-top:24px">
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"11px","letterSpacing":"2px","textTransform":"uppercase","fontWeight":"700"},"color":{"text":"#FF4900"}}} -->
-				<p class="has-text-color" style="color:#FF4900;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase">Cosa raccontarci</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"26px","fontWeight":"400","lineHeight":"1.2","letterSpacing":"-0.01em"},"color":{"text":"#0a0a0a"}}} -->
-				<h3 class="wp-block-heading has-text-color" style="color:#0a0a0a;font-size:26px;font-style:normal;font-weight:400;letter-spacing:-0.01em;line-height:1.2">Quattro cose ci aiutano<br>a risponderti meglio.</h3>
-				<!-- /wp:heading -->
-
-				<!-- wp:spacer {"height":"24px"} -->
-				<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"15.5px","lineHeight":"1.7"},"color":{"text":"#444444"}}} -->
-				<p class="has-text-color" style="color:#444444;font-size:15.5px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;<strong style="color:#0a0a0a">Chi sei.</strong> Ente, azienda, donor individuale. Una riga basta.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"15.5px","lineHeight":"1.7"},"color":{"text":"#444444"}}} -->
-				<p class="has-text-color" style="color:#444444;font-size:15.5px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;<strong style="color:#0a0a0a">Il contesto.</strong> Cosa sta succedendo, perché ne parli ora.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"15.5px","lineHeight":"1.7"},"color":{"text":"#444444"}}} -->
-				<p class="has-text-color" style="color:#444444;font-size:15.5px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;<strong style="color:#0a0a0a">Cosa cerchi.</strong> Donor, partnership, programma corporate, advisory: anche solo l'area.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"15.5px","lineHeight":"1.7"},"color":{"text":"#444444"}}} -->
-				<p class="has-text-color" style="color:#444444;font-size:15.5px;line-height:1.7"><span style="color:#FF4900;font-weight:700">·</span>&nbsp;&nbsp;<strong style="color:#0a0a0a">I tempi.</strong> Quando vorresti partire, scadenze rilevanti.</p>
-				<!-- /wp:paragraph -->
-
-			</div>
-			<!-- /wp:group -->
-
+	<!-- Final CTA -->
+	<div class="sd-cta">
+		<p class="sd-eyebrow">— Non sai da dove iniziare?</p>
+		<h3>Scrivici due righe.<br><em>Smistiamo noi.</em></h3>
+		<div class="sd-cta-buttons">
+			<a class="sd-btn" href="mailto:info@skilldonor.org">Scrivi a info@skilldonor.org →</a>
+			<a class="sd-btn sd-btn--outline" href="mailto:info@skilldonor.org?subject=Richiesta%20call%20conoscitiva">Prenota una call</a>
 		</div>
-		<!-- /wp:column -->
-
-		<!-- ===== COSA SUCCEDE DOPO ===== -->
-		<!-- wp:column -->
-		<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-
-			<!-- wp:group {"style":{"border":{"top":{"color":"#0a0a0a","width":"2px","style":"solid"}},"spacing":{"padding":{"top":"24px"}}},"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained" style="border-top-color:#0a0a0a;border-top-style:solid;border-top-width:2px;padding-top:24px">
-
-				<!-- wp:paragraph {"style":{"typography":{"fontSize":"11px","letterSpacing":"2px","textTransform":"uppercase","fontWeight":"700"},"color":{"text":"#FF4900"}}} -->
-				<p class="has-text-color" style="color:#FF4900;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase">Cosa succede dopo</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"26px","fontWeight":"400","lineHeight":"1.2","letterSpacing":"-0.01em"},"color":{"text":"#0a0a0a"}}} -->
-				<h3 class="wp-block-heading has-text-color" style="color:#0a0a0a;font-size:26px;font-style:normal;font-weight:400;letter-spacing:-0.01em;line-height:1.2">Tre passaggi,<br>nessuna sorpresa.</h3>
-				<!-- /wp:heading -->
-
-				<!-- wp:spacer {"height":"24px"} -->
-				<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- Step 01 -->
-				<!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-				<div class="wp-block-group is-nowrap is-vertical-aligned-top is-layout-flex wp-block-group-is-layout-flex">
-					<!-- wp:paragraph {"style":{"typography":{"fontSize":"13px","fontWeight":"700","letterSpacing":"2px"},"color":{"text":"#FF4900"}}} -->
-					<p class="has-text-color" style="color:#FF4900;font-size:13px;font-weight:700;letter-spacing:2px">01&nbsp;&nbsp;</p>
-					<!-- /wp:paragraph -->
-					<!-- wp:paragraph {"style":{"typography":{"fontSize":"15.5px","lineHeight":"1.6"},"color":{"text":"#444444"}}} -->
-					<p class="has-text-color" style="color:#444444;font-size:15.5px;line-height:1.6"><strong style="color:#0a0a0a">Leggiamo.</strong> Entro 48h ti rispondiamo a mano, non con un autoresponder.</p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:spacer {"height":"16px"} -->
-				<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- Step 02 -->
-				<!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-				<div class="wp-block-group is-nowrap is-vertical-aligned-top is-layout-flex wp-block-group-is-layout-flex">
-					<!-- wp:paragraph {"style":{"typography":{"fontSize":"13px","fontWeight":"700","letterSpacing":"2px"},"color":{"text":"#FF4900"}}} -->
-					<p class="has-text-color" style="color:#FF4900;font-size:13px;font-weight:700;letter-spacing:2px">02&nbsp;&nbsp;</p>
-					<!-- /wp:paragraph -->
-					<!-- wp:paragraph {"style":{"typography":{"fontSize":"15.5px","lineHeight":"1.6"},"color":{"text":"#444444"}}} -->
-					<p class="has-text-color" style="color:#444444;font-size:15.5px;line-height:1.6"><strong style="color:#0a0a0a">Ci confrontiamo.</strong> Una call di 30 minuti per capire se la richiesta è nelle nostre corde.</p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:spacer {"height":"16px"} -->
-				<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
-
-				<!-- Step 03 -->
-				<!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-				<div class="wp-block-group is-nowrap is-vertical-aligned-top is-layout-flex wp-block-group-is-layout-flex">
-					<!-- wp:paragraph {"style":{"typography":{"fontSize":"13px","fontWeight":"700","letterSpacing":"2px"},"color":{"text":"#FF4900"}}} -->
-					<p class="has-text-color" style="color:#FF4900;font-size:13px;font-weight:700;letter-spacing:2px">03&nbsp;&nbsp;</p>
-					<!-- /wp:paragraph -->
-					<!-- wp:paragraph {"style":{"typography":{"fontSize":"15.5px","lineHeight":"1.6"},"color":{"text":"#444444"}}} -->
-					<p class="has-text-color" style="color:#444444;font-size:15.5px;line-height:1.6"><strong style="color:#0a0a0a">Proponiamo.</strong> Solo se ha senso. Una proposta scritta, leggibile, senza gergo.</p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-			</div>
-			<!-- /wp:group -->
-
+		<div class="sd-meta">
+			<p>Sede · Roma</p>
+			<p>Risposta in 48h lavorative</p>
+			<p>Skill Donor ETS · S.r.l.</p>
 		</div>
-		<!-- /wp:column -->
-
 	</div>
-	<!-- /wp:columns -->
 
-	<!-- wp:spacer {"height":"96px"} -->
-	<div style="height:96px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-
-	<!-- ===================== CTA FINALE ===================== -->
-
-	<!-- wp:group {"className":"siavs-reveal","style":{"color":{"background":"#0a0a0a"},"spacing":{"padding":{"top":"56px","bottom":"56px","left":"40px","right":"40px"}},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group siavs-reveal has-background is-layout-constrained wp-block-group-is-layout-constrained" style="border-radius:4px;background-color:#0a0a0a;padding-top:56px;padding-right:40px;padding-bottom:56px;padding-left:40px">
-
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","letterSpacing":"3px","textTransform":"uppercase","fontWeight":"600"},"color":{"text":"#FF4900"}}} -->
-		<p class="has-text-color" style="color:#FF4900;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase">— Non sai da dove iniziare?</p>
-		<!-- /wp:paragraph -->
-
-		<!-- wp:spacer {"height":"16px"} -->
-		<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
-		<!-- /wp:spacer -->
-
-		<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"clamp(28px, 4vw, 40px)","fontWeight":"400","lineHeight":"1.15","letterSpacing":"-0.01em"},"color":{"text":"#ffffff"}}} -->
-		<h3 class="wp-block-heading has-text-color" style="color:#ffffff;font-size:clamp(28px, 4vw, 40px);font-style:normal;font-weight:400;letter-spacing:-0.01em;line-height:1.15">Scrivici due righe.<br><em style="color:#FF4900">Smistiamo noi.</em></h3>
-		<!-- /wp:heading -->
-
-		<!-- wp:spacer {"height":"32px"} -->
-		<div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
-		<!-- /wp:spacer -->
-
-		<!-- CTA buttons -->
-		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
-		<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-block-buttons-is-layout-flex">
-
-			<!-- wp:button {"style":{"color":{"background":"#FF4900","text":"#ffffff"},"typography":{"fontSize":"15px","fontWeight":"600","letterSpacing":"0.3px"},"border":{"radius":"2px"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"32px","right":"32px"}}}} -->
-			<div class="wp-block-button" style="font-size:15px;font-weight:600;letter-spacing:0.3px"><a class="wp-block-button__link has-text-color has-background wp-element-button" style="border-radius:2px;color:#ffffff;background-color:#FF4900;padding-top:16px;padding-right:32px;padding-bottom:16px;padding-left:32px" href="mailto:info@skilldonor.it">Scrivi a info@skilldonor.it →</a></div>
-			<!-- /wp:button -->
-
-			<!-- wp:button {"className":"is-style-outline","style":{"color":{"text":"#ffffff"},"border":{"color":"#404040","radius":"2px","width":"1px","style":"solid"},"typography":{"fontSize":"15px"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"32px","right":"32px"}}}} -->
-			<div class="wp-block-button is-style-outline" style="font-size:15px"><a class="wp-block-button__link has-border-color has-text-color wp-element-button" style="border-color:#404040;border-style:solid;border-width:1px;border-radius:2px;color:#ffffff;padding-top:16px;padding-right:32px;padding-bottom:16px;padding-left:32px" href="mailto:info@skilldonor.it?subject=Richiesta%20call%20conoscitiva">Prenota una call</a></div>
-			<!-- /wp:button -->
-
-		</div>
-		<!-- /wp:buttons -->
-
-		<!-- wp:spacer {"height":"40px"} -->
-		<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
-		<!-- /wp:spacer -->
-
-		<!-- Meta footer del CTA -->
-		<!-- wp:group {"style":{"border":{"top":{"color":"#1f1f1f","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"24px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-		<div class="wp-block-group is-content-justification-space-between is-vertical-aligned-center is-layout-flex wp-block-group-is-layout-flex wp-container-content-justification-space-between" style="border-top-color:#1f1f1f;border-top-style:solid;border-top-width:1px;padding-top:24px">
-
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","letterSpacing":"1px"},"color":{"text":"#808080"}}} -->
-			<p class="has-text-color" style="color:#808080;font-size:12px;letter-spacing:1px">Sede · Roma</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","letterSpacing":"1px"},"color":{"text":"#808080"}}} -->
-			<p class="has-text-color" style="color:#808080;font-size:12px;letter-spacing:1px">Risposta in 48h lavorative</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","letterSpacing":"1px"},"color":{"text":"#808080"}}} -->
-			<p class="has-text-color" style="color:#808080;font-size:12px;letter-spacing:1px">Skill Donor ETS · S.r.l.</p>
-			<!-- /wp:paragraph -->
-
-		</div>
-		<!-- /wp:group -->
-
-	</div>
-	<!-- /wp:group -->
+</div>
+<!-- /wp:html -->
 
 </div>
 <!-- /wp:group -->
