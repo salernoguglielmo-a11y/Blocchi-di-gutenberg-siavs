@@ -8,14 +8,21 @@
 <style>
 	.siavs-reveal {
 		opacity: 0;
-		transform: translateY(24px);
-		transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+		transform: translateY(20px);
+		transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+		            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 		will-change: opacity, transform;
 	}
 	.siavs-reveal.is-visible {
 		opacity: 1;
 		transform: translateY(0);
 	}
+	.siavs-reveal:nth-child(2) { transition-delay: 0.08s; }
+	.siavs-reveal:nth-child(3) { transition-delay: 0.16s; }
+	.siavs-reveal:nth-child(4) { transition-delay: 0.24s; }
+	.siavs-reveal:nth-child(5) { transition-delay: 0.32s; }
+	.siavs-reveal:nth-child(6) { transition-delay: 0.40s; }
+
 	@media (prefers-reduced-motion: reduce) {
 		.siavs-reveal,
 		.siavs-reveal.is-visible {
@@ -42,7 +49,7 @@
 					revealObserver.unobserve(entry.target);
 				}
 			});
-		}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+		}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 		revealEls.forEach(function (el) { revealObserver.observe(el); });
 	}
 
@@ -53,13 +60,13 @@
 		if (!match) return;
 		var target = parseInt(match[1], 10);
 		var suffix = match[2] || '';
-		var duration = 1400;
+		var duration = 1600;
 		var start = null;
 		el.textContent = '0' + suffix;
 		function step(ts) {
 			if (!start) start = ts;
 			var p = Math.min((ts - start) / duration, 1);
-			var eased = 1 - Math.pow(1 - p, 3);
+			var eased = 1 - Math.pow(1 - p, 4);
 			el.textContent = Math.floor(eased * target) + suffix;
 			if (p < 1) requestAnimationFrame(step);
 			else el.textContent = target + suffix;
